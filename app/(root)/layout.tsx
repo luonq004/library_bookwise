@@ -1,7 +1,14 @@
+import { auth } from "@/auth";
 import Header from "@/components/HeaderComponent";
+import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = async ({ children }: { children: ReactNode }) => {
+  const session = await auth();
+  console.log("Session in layout:", session);
+
+  if (!session) redirect("/sign-in");
+
   return (
     <main className="bg-[url('/images/pattern.webp')] root-container">
       <div className="mx-auto max-w-7xl">
