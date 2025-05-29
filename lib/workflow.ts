@@ -34,7 +34,7 @@ export const sendEmail = async (message: string) => {
       console.error("Failed to send email.", error);
     });
 
-  qstashClient.publishJSON({
-    // api:
-  });
+  // qstashClient.publishJSON({
+  //   // api:
+  // });
 };
