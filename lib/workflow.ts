@@ -25,13 +25,13 @@ export const sendEmail = async ({
   const transporter = nodemailer.createTransport({
     service: "gmail", // Hoặc dịch vụ khác bạn sử dụng
     auth: {
-      user: process.env.GMAIL_USER, // Địa chỉ email người gửi
-      pass: process.env.GMAIL_PASS, // App password (nếu dùng Gmail)
+      user: config.env.nodeMailer.userEmail, // Địa chỉ email người gửi
+      pass: config.env.nodeMailer.userPassword, // App password (nếu dùng Gmail)
     },
   });
 
   const mailOptions = {
-    from: process.env.GMAIL_USER, // Người gửi
+    from: config.env.nodeMailer.userEmail, // Người gửi
     to: email, // Người nhận
     subject, // Tiêu đề email
     html: message, // Nội dung HTML
