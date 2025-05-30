@@ -70,11 +70,14 @@ export const signUp = async (params: AuthCredentials) => {
 
     await workflowClient.trigger({
       url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
+      // url: `http://localhost:3000/api/workflows/onboarding`,
       body: {
         email,
         fullName,
       },
     });
+
+    console.log("User created successfully");
 
     await signInWithCredentials({ email, password });
 

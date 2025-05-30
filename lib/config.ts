@@ -16,7 +16,8 @@ const config = {
     },
     nodeMailer: {
       userEmail: process.env.GMAIL_USER,
-      userPassword: process.env.GMAIL_PASS,
+      // userPassword: process.env.GMAIL_PASS,
+      userPassword: "yjnb yqoh jlwn dbcc",
     },
   },
 };

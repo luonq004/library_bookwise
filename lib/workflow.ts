@@ -37,5 +37,7 @@ export const sendEmail = async ({
     html: message, // Nội dung HTML
   };
 
+  console.log(`Sending email to ${email} with subject "${subject}"`);
+
   return transporter.sendMail(mailOptions); // Gửi email
 };
